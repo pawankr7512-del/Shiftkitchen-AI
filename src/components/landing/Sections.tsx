@@ -54,83 +54,6 @@ export function Solution() {
   );
 }
 
-/* LIVE DEMO with auto slider 3 cards */
-import demoChat1 from "@/assets/demo-chat-1.jpg";
-import demoChat2 from "@/assets/demo-chat-2.jpg";
-import demoChat3 from "@/assets/demo-chat-3.jpg";
-
-const DEMO_SLIDES = [
-  { src: demoChat1, title: "Cloud Kitchen — Biryani Orders", desc: "AI captures order, takes payment, sends to kitchen — in 30 seconds." },
-  { src: demoChat2, title: "Sweet Shop — Festive Boxes", desc: "Bulk Diwali orders handled with images, prices & quantity picker." },
-  { src: demoChat3, title: "Bakery — Custom Cake Flow", desc: "Design, flavor, delivery slot & payment — fully automated." },
-];
-
-export function LiveDemo() {
-  const loop = [...DEMO_SLIDES, ...DEMO_SLIDES];
-  return (
-    <section id="demos" className="relative w-full overflow-hidden py-16 sm:py-24 lg:py-28">
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10 opacity-60"
-        style={{ background: "var(--gradient-hero)" }}
-      />
-      <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-
-      <div className="mx-auto mb-10 max-w-3xl px-4 text-center sm:mb-14 sm:px-6">
-        <div className="mb-4 inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs font-medium text-primary">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" /> Live Demo
-        </div>
-        <h2 className="font-display text-[26px] font-bold sm:text-5xl">
-          Watch Real <span className="text-gradient">WhatsApp Demos</span>
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground">
-          Real conversations, real orders — sliding live from happy customers.
-        </p>
-      </div>
-
-      <div
-        className="relative w-full overflow-hidden"
-        style={{
-          maskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
-          WebkitMaskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
-        }}
-      >
-        <motion.div
-          className="flex gap-8 py-6 w-max px-6"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 28, ease: "linear", repeat: Infinity }}
-        >
-          {loop.map((slide, i) => (
-            <div key={i} className="shrink-0 w-[300px] sm:w-[340px] md:w-[380px]">
-              <div className="glass-card group p-4 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(172,106,255,0.5)]">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-black ring-1 ring-white/10">
-                  <img
-                    src={slide.src.src}
-                    alt={slide.title}
-                    width={1024}
-                    height={1024}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                  <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/70 px-2.5 py-1 text-[10px] font-medium text-white ring-1 ring-white/15 backdrop-blur">
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" /> LIVE
-                  </span>
-                </div>
-                <div className="px-1 pb-1 pt-4">
-                  <p className="font-display text-base font-semibold leading-tight">{slide.title}</p>
-                  <p className="mt-1.5 line-clamp-2 text-xs text-muted-foreground">{slide.desc}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
 /* BUILT FOR REAL CHALLENGES */
 export function BuiltFor() {
   const items = [
@@ -459,7 +382,7 @@ export function FinalCTA({ onBookDemo }: { onBookDemo: () => void }) {
           <button onClick={onBookDemo} className="btn-primary-glow inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold sm:w-auto sm:py-4">
             <Zap className="h-4 w-4" /> Book Free Demo
           </button>
-          <a href="#contact" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-primary/40 px-8 py-3.5 text-sm font-semibold text-foreground transition hover:bg-primary/10 sm:w-auto sm:py-4">
+          <a href="#contact" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-primary/40 px-8 py-3.5 text-sm font-semibold text-foreground transition hover:border-primary/60">
             <ArrowRight className="h-4 w-4" /> Get in Touch
           </a>
         </div>
@@ -477,7 +400,6 @@ export function Footer() {
     { title: "Product", links: [
       { label: "Features", href: "#features" },
       { label: "Pricing", href: "#pricing" },
-      { label: "Demo", href: "#demos" },
       { label: "FAQ", href: "#faq" },
     ]},
     { title: "Company", links: [
@@ -530,7 +452,6 @@ export function Footer() {
   );
 }
 
-
 /* WHATSAPP FAB */
 export function WhatsAppFab() {
   return (
@@ -551,7 +472,7 @@ export function WhatsAppFab() {
   viewBox="0 0 448 512"
   className="h-7 w-7 fill-white"
 >
-  <path d="M380.9 97.1C339-3.1 214.8-33.5 123.1 31.2S-12.5 214.8 52.2 306.5L0 480l178.2-46.7c89.2 48.5 201.8 16.8 255.4-72.4 53.6-89.1 31.7-203.5-52.7-263.8zM224 392c-30.5 0-60.2-8.2-86.2-23.8l-6.2-3.7-105.8 27.7 28.3-103.1-4-6.5C3.5 206.2 25.5 114.6 101.4 69.1c75.9-45.5 174.3-31.8 233.7 32.5 59.4 64.3 61.8 163.6 5.8 230.8C311.8 372.6 269.2 392 224 392zm101.5-138.4c-5.5-2.8-32.8-16.2-37.9-18.1-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.5-14.4 18.1-17.6 21.8-3.2 3.7-6.5 4.2-12 .9-32.6-16.3-54-29.1-75.6-65.9-5.7-9.8 5.7-9.1 16.3-30.4 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.5-19.4 18.9-19.4 46.1s19.9 53.5 22.6 57.2c2.8 3.7 39.1 59.7 94.8 83.7 35.1 15.2 48.8 16.5 66.3 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.4-2.3-5.1-3.7-10.6-6.5z" />
+  <path d="M380.9 97.1C339-3.1 214.8-33.5 123.1 31.2S-12.5 214.8 52.2 306.5L0 480l178.2-46.7c89.2 48.5 201.8 16.8 255.4-72.4 53.6-89.1 31.7-203.5-52.7-263.8zM224 392c-30.5 0-60.2-8.2-86.2-23.8l-6.2-3.7-64.3 16.8 17.1-62.6-4-6.4c-17.8-28.1-27.2-60.6-27.2-94.4 0-107.6 87.6-195.2 195.2-195.2 52.1 0 101 20.3 137.8 57.1 36.9 36.9 57.2 85.8 57.2 137.9 0 107.6-87.6 195.2-195.2 195.2zm106.5-184.3c-5.8-2.9-34.2-16.9-39.5-18.8-5.3-1.9-9.1-2.9-13 2.9-3.9 5.8-15.1 18.8-18.5 22.6-3.5 3.9-7 4.3-12.8 1.4-34.2-17.1-56.6-30.5-79.1-66.5-5.9-10.1 5.9-9.4 17.1-31.1 1.9-3.1.9-5.8-.5-8.1-1.4-2.3-13-31.3-17.8-42.8-4.7-11.2-9.4-9.7-13-9.9-3.4-.2-7.3-.2-11.1-.2-3.9 0-10.2 1.4-15.5 7-5.3 5.8-20.3 19.8-20.3 48.3s20.3 56 23.1 59.9c2.9 3.9 40.8 62.2 98.9 87.1 13.8 5.9 24.6 9.4 33 12.1 13.8 4.4 26.4 3.8 36.4 2.3 11.1-1.7 34.2-14 39-27.6 4.8-13.6 4.8-25.3 3.4-27.6-1.4-2.3-5.3-3.9-11.1-6.8z" />
 </svg>
     </a>
   );
