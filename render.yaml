@@ -1,8 +1,9 @@
 services:
   - type: web
     name: shiftkitchen-ai
-    runtime: node
-    buildCommand: npm run build
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
     startCommand: npm run start
     envVars:
       - key: NODE_ENV
