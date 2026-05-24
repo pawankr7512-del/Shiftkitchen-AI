@@ -36,7 +36,7 @@ export function Navbar({ onBookDemo }: { onBookDemo: () => void }) {
       }}
     >
       <a href="#top" className="flex items-center gap-2">
-        <img src={logo} alt="Shift Kitchen AI" className="h-12 w-auto object-contain sm:h-14" />
+        <img src={logo.src} alt="Shift Kitchen AI" className="h-12 w-auto object-contain sm:h-14" />
       </a>
 
       <div className="hidden items-center gap-1 md:flex">

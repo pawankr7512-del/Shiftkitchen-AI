@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+"use client";
+
 import { useEffect, useState } from "react";
 import { Toaster } from "sonner";
 import { Loader } from "@/components/landing/Loader";
@@ -8,19 +9,24 @@ import { Marquee } from "@/components/landing/Marquee";
 import { ContactModal } from "@/components/landing/ContactModal";
 import { WorkflowShowcase } from "@/components/landing/WorkflowShowcase";
 import {
-  Problems, Solution, LiveDemo, BuiltFor, Benefits,
-  Pricing, Testimonials, FAQ, ContactForm, FinalCTA, Footer, WhatsAppFab,
+  Problems,
+  Solution,
+  LiveDemo,
+  BuiltFor,
+  Benefits,
+  Pricing,
+  Testimonials,
+  FAQ,
+  ContactForm,
+  FinalCTA,
+  Footer,
+  WhatsAppFab,
 } from "@/components/landing/Sections";
 
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-function Index() {
+export default function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
     const seen = sessionStorage.getItem("sk_modal_seen");
     if (seen) return;
     const t = setTimeout(() => {

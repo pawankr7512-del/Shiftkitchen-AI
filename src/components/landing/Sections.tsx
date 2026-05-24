@@ -106,7 +106,7 @@ export function LiveDemo() {
               <div className="glass-card group p-4 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(172,106,255,0.5)]">
                 <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-black ring-1 ring-white/10">
                   <img
-                    src={slide.src}
+                    src={slide.src.src}
                     alt={slide.title}
                     width={1024}
                     height={1024}
@@ -497,7 +497,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-4">
           <div className="col-span-2 lg:col-span-1">
-            <img src={logo} alt="Shift Kitchen AI" className="h-16 w-auto object-contain sm:h-20" />
+            <img src={logo.src} alt="Shift Kitchen AI" className="h-16 w-auto object-contain sm:h-20" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               AI-powered WhatsApp automation for restaurants, bakeries, sweet shops, and cloud kitchens across India.
             </p>

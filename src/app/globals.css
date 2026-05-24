@@ -1,5 +1,6 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
+@source "../components";
+@source "../app";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -39,14 +40,13 @@
 
 :root {
   --radius: 1rem;
-  /* Dark by default - SwiftKitchen AI */
   --background: oklch(0.08 0.015 280);
   --foreground: oklch(0.98 0.005 280);
   --card: oklch(0.11 0.02 280);
   --card-foreground: oklch(0.98 0.005 280);
   --popover: oklch(0.11 0.02 280);
   --popover-foreground: oklch(0.98 0.005 280);
-  --primary: oklch(0.68 0.22 305);          /* #ac6aff */
+  --primary: oklch(0.68 0.22 305);
   --primary-foreground: oklch(0.99 0 0);
   --primary-glow: oklch(0.78 0.2 305);
   --secondary: oklch(0.16 0.025 280);

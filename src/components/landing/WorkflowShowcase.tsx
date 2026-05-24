@@ -64,7 +64,7 @@ export function WorkflowShowcase() {
               <div className="glass-card group flex h-full flex-col p-4 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_-15px_rgba(172,106,255,0.5)] sm:p-5">
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black ring-1 ring-white/10">
                   <img
-                    src={s.img}
+                    src={s.img.src}
                     alt={s.title}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
