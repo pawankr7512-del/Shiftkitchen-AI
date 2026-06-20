@@ -54,9 +54,10 @@ export function Solution() {
   );
 }
 
-/* LIVE DEMO */
+/* LIVE DEMO SECTION */
 export function LiveDemo() {
   const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <Section id="live-demo" eyebrow="Live Demo"
       title={<>See It In <span className="text-gradient">Action</span></>}
