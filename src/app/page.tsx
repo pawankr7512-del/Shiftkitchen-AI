@@ -11,6 +11,7 @@ import { WorkflowShowcase } from "@/components/landing/WorkflowShowcase";
 import {
   Problems,
   Solution,
+  LiveDemo,
   BuiltFor,
   Benefits,
   Pricing,
@@ -48,6 +49,7 @@ export default function HomePage() {
         <Problems />
         <WorkflowShowcase />
         <Solution />
+        <LiveDemo />
         <BuiltFor />
         <Benefits />
         <Pricing onContact={openModal} />
