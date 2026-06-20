@@ -4,7 +4,7 @@ import {
   MessageSquareText, Clock, AlertCircle, Users, RefreshCcw,
   Sparkles, ListOrdered, ShoppingCart, BadgeCheck,
   Languages, Zap, Plug, ShieldCheck, TrendingUp, Wand2,
-  ChevronDown, Star, ArrowRight, Mail, Heart,
+  ChevronDown, Star, ArrowRight, Mail, Heart, Play,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -50,6 +50,66 @@ export function Solution() {
           <FancyCard key={c.title} icon={c.icon} title={c.title} description={c.desc} cta="Explore More" gradient={c.grad} />
         ))}
       </div>
+    </Section>
+  );
+}
+
+/* LIVE DEMO */
+export function LiveDemo() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  return (
+    <Section id="live-demo" eyebrow="Live Demo"
+      title={<>See It In <span className="text-gradient">Action</span></>}
+      subtitle="Watch how SwiftKitchen AI handles real customer interactions in seconds.">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="glass-card rounded-2xl overflow-hidden">
+        <div className="relative aspect-video bg-gradient-to-br from-black/40 to-primary/20 flex items-center justify-center group cursor-pointer"
+          onClick={() => setIsPlaying(!isPlaying)}>
+          {!isPlaying ? (
+            <>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition" />
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white shadow-lg">
+                <Play className="h-6 w-6 ml-0.5" fill="currentColor" />
+              </motion.div>
+              <div className="absolute inset-0 rounded-full border-2 border-primary opacity-30 animate-pulse"
+                style={{ width: "120px", height: "120px", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }} />
+            </>
+          ) : (
+            <div className="w-full h-full bg-black/60 flex items-center justify-center">
+              <p className="text-muted-foreground">Demo video coming soon...</p>
+            </div>
+          )}
+        </div>
+        <div className="p-6 space-y-4">
+          <h3 className="font-display text-xl font-semibold">Real Conversation Flow</h3>
+          <div className="space-y-3">
+            <div className="flex gap-3">
+              <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-xs">👤</div>
+              <div className="glass rounded-lg p-3 max-w-xs">
+                <p className="text-sm">Hi, do you have margherita pizza?</p>
+              </div>
+            </div>
+            <div className="flex gap-3 justify-end">
+              <div className="glass rounded-lg p-3 max-w-xs">
+                <p className="text-sm">Yes! Our Margherita is ₹349. Would you like to add it?</p>
+              </div>
+              <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs">🤖</div>
+            </div>
+            <div className="flex gap-3">
+              <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-xs">👤</div>
+              <div className="glass rounded-lg p-3 max-w-xs">
+                <p className="text-sm">Yes, and add a coke too</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </Section>
   );
 }
@@ -382,7 +442,7 @@ export function FinalCTA({ onBookDemo }: { onBookDemo: () => void }) {
           <button onClick={onBookDemo} className="btn-primary-glow inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold sm:w-auto sm:py-4">
             <Zap className="h-4 w-4" /> Book Free Demo
           </button>
-          <a href="#contact" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-primary/40 px-8 py-3.5 text-sm font-semibold text-foreground transition hover:border-primary/60">
+          <a href="#contact" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-primary/40 px-8 py-3.5 text-sm font-semibold text-foreground transition hover:bg-white/5">
             <ArrowRight className="h-4 w-4" /> Get in Touch
           </a>
         </div>
@@ -472,7 +532,7 @@ export function WhatsAppFab() {
   viewBox="0 0 448 512"
   className="h-7 w-7 fill-white"
 >
-  <path d="M380.9 97.1C339-3.1 214.8-33.5 123.1 31.2S-12.5 214.8 52.2 306.5L0 480l178.2-46.7c89.2 48.5 201.8 16.8 255.4-72.4 53.6-89.1 31.7-203.5-52.7-263.8zM224 392c-30.5 0-60.2-8.2-86.2-23.8l-6.2-3.7-64.3 16.8 17.1-62.6-4-6.4c-17.8-28.1-27.2-60.6-27.2-94.4 0-107.6 87.6-195.2 195.2-195.2 52.1 0 101 20.3 137.8 57.1 36.9 36.9 57.2 85.8 57.2 137.9 0 107.6-87.6 195.2-195.2 195.2zm106.5-184.3c-5.8-2.9-34.2-16.9-39.5-18.8-5.3-1.9-9.1-2.9-13 2.9-3.9 5.8-15.1 18.8-18.5 22.6-3.5 3.9-7 4.3-12.8 1.4-34.2-17.1-56.6-30.5-79.1-66.5-5.9-10.1 5.9-9.4 17.1-31.1 1.9-3.1.9-5.8-.5-8.1-1.4-2.3-13-31.3-17.8-42.8-4.7-11.2-9.4-9.7-13-9.9-3.4-.2-7.3-.2-11.1-.2-3.9 0-10.2 1.4-15.5 7-5.3 5.8-20.3 19.8-20.3 48.3s20.3 56 23.1 59.9c2.9 3.9 40.8 62.2 98.9 87.1 13.8 5.9 24.6 9.4 33 12.1 13.8 4.4 26.4 3.8 36.4 2.3 11.1-1.7 34.2-14 39-27.6 4.8-13.6 4.8-25.3 3.4-27.6-1.4-2.3-5.3-3.9-11.1-6.8z" />
+  <path d="M380.9 97.1C339-3.1 214.8-33.5 123.1 31.2S-12.5 214.8 52.2 306.5L0 480l178.2-46.7c89.2 48.5 201.8 16.8 255.4-72.4 53.6-89.1 31.7-203.5-52.7-263.8zM224 392c-30.5 0-60.2-8.2-86.2-23.8l-6.1-3.6-63.5 16.7 17.1-62.5-4-6.4C49.8 258.8 39 229.3 39 197.5 39 107.2 111.1 35 201.4 35S363.8 107.1 363.8 197.5 291.7 359.9 201.4 359.9zM360.5 163.3c1.1 3.1-1.9 6.2-4.8 7.3-1.4.6-28.4 13.8-42 19.8-4.2 1.9-8.8.5-11.4-4.8-3.3-5.8-9.5-16.5-11.9-20.2-2.2-3.2-5.6-4.8-9.1-3.6-7 2.3-28.5 11.3-47 27.1-3 2.3-7 1.6-9.7-.3-2.8-2.1-10.7-11.3-13.6-15.2-3.9-4.2-7.5-3.6-10.6-3.6-3.3 0-6.6.1-10 .1-3.1.1-6.9 1.1-9.7 4.5-3 3.6-11.6 11.8-11.6 28.7 0 16.8 9.4 33.3 10.7 35.6 1.3 2.3 18.5 28.9 44.9 40.4 6.5 3 11.5 4.8 15.4 6.2 6.6 2.1 12.6 1.8 17.4 1.1 5.3-.8 16.3-6.7 18.6-13.1 2.4-6.5 2.4-12.1 1.7-13.1-.7-1.1-2.6-1.8-4.8-3z" />
 </svg>
     </a>
   );
